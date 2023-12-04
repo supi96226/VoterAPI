@@ -1,0 +1,43 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: C:\Users\nushan_09113\.minikube\ca.crt
+    server: https://127.0.0.1:49153
+  name: minikube
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1ERXlOakUyTVRVME1Wb1hEVE14TURFeU5ERTJNVFUwTVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTE5yCnVFSm5GTUp2eGpGUjh0VjRCUHpHMnliN3dmWVpiL3FQeHd0d0ZrWWpJUmJzRkF1N01TaTBpUWhlbjJUcGQ1QlgKczBnb2hFcGE0S1lyeVM2SXNaYnAvM01oRW5hM3dmVFFFVzVZQnlQd3RZamJoMXhqWWMybUhwTFNSeUFsZy8vRwp1c1lkVUxYc3NSTnJMRlhJek4rNGVGNGdNMHB4c2xsdkVhMzRpUVcvRjU3T0J4ZWRVVU5GVHdScU0rSFc1RWFuCjZNYmJmZDNNWSt2NHJaOWVxOUdWQzhYUHhyajl1Njc1U2xSbkxTUzZvTmNOVTZZRzhsZ2J4Q3M3dXVwb1o0SXAKNkpVZkF2RUhadHN1cTRuZHZuVEgxTVBQY0JOT2YyaGZWdjdIRzlEdGRQUjdGa1JsbnJFakk0TUNEcGtsRkxiSgp0UmNjZDZkUlhhNUZOQWZsUHhjQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFLSTlOTjBqaTZSOWJtOVdlRERVQ1lUM1BwVWgKdHBYNkh6QmMvNndlZitrR0ZjRUYrd2xwaFVUZ1BsblZJWlE5cGVGVmhGZFNvUG52Y3VOT3Vlem1BcS93UGZvNgp1ZElkRE9ZWndXdjhNaGpSd1hPZENnejNJaERyWWdKblI5UTJaUXZ2dUNGODhvbGZzOWRxemJWcDdBc256eXRQCkxzSHh3TDI2N3MxWkJlUnFBQTNOamFnUUVYMHhuRGhuTmhRRC9mK09TVU1VanNvZTkvelF3SUxlM1VaSlV6OWwKTExqU0hnb1BkSEVIMW9iMnVNdS9iQzRVSzhYcGJqL2VONWZqMWFwSVIvanprZ3huNVZhZ3VxZmRVc20yZ2lNZwoxcldMTWovMjZUaEZsa2FUZFBDVmNRaGVWSTN5eXpRaW1Hc0IwZDA5Wk94ZGJLWHQ3Q2kxTVkxZ1Q2UT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://B0AF57ED72BA7EFD5767299E9E42BF9E.gr7.us-east-2.eks.amazonaws.com
+  name: starlink-satellite-cluster.us-east-2.eksctl.io
+contexts:
+- context:
+    cluster: starlink-satellite-cluster.us-east-2.eksctl.io
+    user: Kanishkalw@starlink-satellite-cluster.us-east-2.eksctl.io
+  name: Kanishkalw@starlink-satellite-cluster.us-east-2.eksctl.io
+- context:
+    cluster: minikube
+    namespace: default
+    user: minikube
+  name: minikube
+current-context: Kanishkalw@starlink-satellite-cluster.us-east-2.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: Kanishkalw@starlink-satellite-cluster.us-east-2.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - starlink-satellite-cluster
+      - --region
+      - us-east-2
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+- name: minikube
+  user:
+    client-certificate: C:\Users\nushan_09113\.minikube\profiles\minikube\client.crt
+    client-key: C:\Users\nushan_09113\.minikube\profiles\minikube\client.key
